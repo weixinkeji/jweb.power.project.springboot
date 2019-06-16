@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import jweb.power.project.springboot.entity.User;
+import weixinkeji.vip.jweb.power.ann.JWPCommon;
+import weixinkeji.vip.jweb.power.vo.JWPUserPower;
 
 /**
  * 
@@ -17,13 +19,23 @@ import jweb.power.project.springboot.entity.User;
 @Controller
 public class LoginController {
 	
+	@JWPCommon
+	@RequestMapping(path = "/", method = RequestMethod.GET)
+	public String forwardTAdd() {
+		return "index";
+	}
+	@JWPCommon
 	@RequestMapping(path = "/user/{u}/login", method = RequestMethod.POST)
-	public String forwardTAdd(HttpSession session,@PathVariable("u") Integer u) {
+	public String forwardTAdd(HttpSession session,@PathVariable("u") Integer u, String sysGrades, String sysCodes) {
+		User user1;
 		//模拟 用户1登陆
 		if(u==1) {
-			session.setAttribute("userSession", User.getUser1("1,3", "3"));
+			user1=User.getUser1(sysCodes,sysGrades );
+			session.setAttribute("userSession", user1);
+			
 		}else {
-			session.setAttribute("userSession", User.getUser2("1,3", "3"));
+			user1=User.getUser2(sysCodes,sysGrades );
+			session.setAttribute("userSession", user1);
 		}
 		return "index";
 	}
