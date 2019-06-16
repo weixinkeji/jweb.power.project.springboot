@@ -13,13 +13,13 @@ public class Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
-	
-	@Bean
-	public FilterRegistrationBean<JWPFilter> myFilter() {
-		FilterRegistrationBean<JWPFilter> registration = new FilterRegistrationBean<JWPFilter>();
-		registration.setFilter(new JWPFilter());
-		registration.addUrlPatterns("/*");
-		return registration;
-	}
+//	
+//	@Bean
+//	public FilterRegistrationBean<JWPFilter> myFilter() {
+//		FilterRegistrationBean<JWPFilter> registration = new FilterRegistrationBean<JWPFilter>();
+//		registration.setFilter(new JWPFilter());
+//		registration.addUrlPatterns("/*");
+//		return registration;
+//	}
 
 }

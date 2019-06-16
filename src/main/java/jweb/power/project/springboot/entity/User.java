@@ -24,7 +24,8 @@ public class User {
 		user.setUserId(1);
 		user.setSysCodes(sysCodes);
 		user.setSysGrades(sysGrades);
-		user.setUserAccount("name1");
+		user.setUserName("我是用户1");
+		user.setUserAccount("account1");
 		user.setUserPassword("123");
 		user.setUserIdImg("/static/_upload/image/u1.gif");
 		return user;
@@ -41,7 +42,8 @@ public class User {
 		user.setUserId(1);
 		user.setSysCodes(sysCodes);
 		user.setSysGrades(sysGrades);
-		user.setUserAccount("name2");
+		user.setUserName("我是用户2");
+		user.setUserAccount("account2");
 		user.setUserPassword("123");
 		user.setUserIdImg("/static/_upload/image/u2.gif");
 		return user;
