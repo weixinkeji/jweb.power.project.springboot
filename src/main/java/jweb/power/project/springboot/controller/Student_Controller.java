@@ -18,14 +18,10 @@ import weixinkeji.vip.jweb.power.ann.JWPIgnoreDecorate;
  * @author wangchunzi
  *
  */
-@JWPDecorate(codePrefix = "A:")
+//@JWPDecorate(codePrefix = "user:")
 @Controller
-@RequestMapping("/user")
-public class UserController {
-	
-	
-	
-	
+@RequestMapping("/student")
+public class Student_Controller {
 	
 	//拥有修改 、和查询  编号的人， 都可以访问此方法
 	@JWPCode("select,update")
@@ -35,10 +31,9 @@ public class UserController {
 	public String select() {
 		return "select";
 	}
-	
 	@JWPIgnoreDecorate
 //	@JWPRegListen(value= {CListen.class})
-//	@JWPGrades("12")
+//	@JWPGrades("1,3")
 	@JWPCode("add")
 //	@JWPCommon
 	@RequestMapping(path = "/add", method = RequestMethod.GET)

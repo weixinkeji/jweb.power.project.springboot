@@ -49,9 +49,11 @@ public class LoginController {
 		}else {
 			user1=User.getUser2(sysCodes,sysGrades );
 			session.setAttribute("userSession", user1);
-			//用户的 权限等级
-			String[] grades=null!=user1.getSysGrades()?user1.getSysGrades().split(","):null;
 			
+			//用户的 权限等级
+			String[] grades=null!=user1.getSysGrades()
+					&&!user1.getSysGrades().isEmpty()
+					?user1.getSysGrades().split(","):null;
 			//用户的 权限编号
 			String[] code=null!=user1.getSysCodes()?user1.getSysCodes().split(","):null;
 			session.setAttribute("userPowerSession2", new JWPUserPower(grades,code));

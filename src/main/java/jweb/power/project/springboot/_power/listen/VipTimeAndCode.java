@@ -7,19 +7,30 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import jweb.power.project.springboot.entity.User;
 import weixinkeji.vip.jweb.power.ann.JWPRegListenUrl;
 import weixinkeji.vip.jweb.power.listen.JWPListenInterface;
 import weixinkeji.vip.jweb.power.listen.ListenStatus;
 import weixinkeji.vip.jweb.power.model.JWPControllerModel;
 import weixinkeji.vip.jweb.power.vo.JWPUserPower;
 
-public class AListen implements  JWPListenInterface {
+@JWPRegListenUrl(controllerUrl = ":**+/vip/time/**+")
+public class VipTimeAndCode implements JWPListenInterface {
 
 	@Override
 	public boolean doMethod(FilterChain chain, HttpServletRequest req, HttpServletResponse resp, String requestURL,
 			JWPControllerModel powerModel, JWPUserPower powerCode, ListenStatus status)
 			throws IOException, ServletException {
-		System.out.println(this.getClass().getName()+"："+status.name());
+
+		if (status == ListenStatus.code_fail) {
+			Object obj = req.getSession().getAttribute("userSession");
+			User user = (User) obj;
+			if (null != user.getVip() && user.getVip() > 0) {
+				chain.doFilter(req, resp);// 强制手动放行
+			}
+			return false;
+		}
+		
 		return true;
 	}
 }

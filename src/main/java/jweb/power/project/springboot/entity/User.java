@@ -13,6 +13,18 @@ public class User {
 	private String sysCodes;
 	private String sysGrades;
 	
+	private String vipcode;
+	
+	private Integer vip;//1 表示 1年表示12个月
+	
+	public String getVipcode() {
+		return vipcode;
+	}
+
+	public void setVipcode(String vipcode) {
+		this.vipcode = vipcode;
+	}
+
 	/**
 	 * 模拟用户登陆的数据 :用户1
 	 * @param sysCodes  拥有的权限编号
@@ -27,10 +39,22 @@ public class User {
 		user.setUserName("我是用户1");
 		user.setUserAccount("account1");
 		user.setUserPassword("123");
+		user.setVipcode("VIP12");
+		user.setVip(12);
 		user.setUserIdImg("/static/_upload/image/u1.gif");
 		return user;
 	}
 	
+	
+	
+	public Integer getVip() {
+		return vip;
+	}
+
+	public void setVip(Integer vip) {
+		this.vip = vip;
+	}
+
 	/**
 	 * 模拟用户登陆的数据 :用户2
 	 * @param sysCodes  拥有的权限编号
