@@ -5,9 +5,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import weixinkeji.vip.jweb.power.ann.JWPDecorate;
+
 /**
  * @author wangchunzi
  */
+@JWPDecorate(codePrefix = "S:")
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -21,7 +24,7 @@ public class UserController {
 	
 	@RequestMapping(path = "/add", method = RequestMethod.GET)
 	@ResponseBody
-	public String forwardTAdd() {
+	public String add() {
 		return "add";
 	}
 	

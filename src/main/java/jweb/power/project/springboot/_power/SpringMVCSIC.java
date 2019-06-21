@@ -108,6 +108,12 @@ public class SpringMVCSIC implements JWPSystemInterfaceConfig {
 		return new String[] { ".json", ".xml" };
 	}
 	
+	//开启 方法名即 编号处理
+	@Override
+	public  boolean methodIsCode() {
+		return true;
+	}
+	
 	//从 注解PatchMapping 取得路径。并确保它们是/开头（没有，则强加）
 	private String getUrlByMapping(PatchMapping a) {
 		if (null != a.name() && !a.name().isEmpty()) {

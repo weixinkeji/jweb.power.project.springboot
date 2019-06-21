@@ -16,18 +16,17 @@ import weixinkeji.vip.jweb.power.vo.JWPUserPower;
  * @author wangchunzi
  *
  */
-
 @JWPCommon
 @Controller
 public class LoginController {
 	
 	@RequestMapping(path = "/", method = RequestMethod.GET)
-	public String forwardTAdd() {
+	public String index() {
 		return "index";
 	}
 	
 	@RequestMapping(path = "/user/{u}/login", method = RequestMethod.POST)
-	public String forwardTAdd(HttpSession session,@PathVariable("u") Integer u, String sysGrades, String sysCodes) {
+	public String login(HttpSession session,@PathVariable("u") Integer u, String sysGrades, String sysCodes) {
 		User user=u==1
 				?User.getUser1(sysCodes,sysGrades )		//u=1时	    ，返回模拟 用户1 的数据
 				:User.getUser2(sysCodes,sysGrades );	//u=其他值时，返回模拟 用户2的数据

@@ -95,7 +95,10 @@ public class SpringConfig implements WebMvcConfigurer {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		System.out.println("=============================注册资源器成功=================================");
-		registry.addResourceHandler("/static/**").addResourceLocations("/public", "/static/").setCachePeriod(31556926);
+		registry.addResourceHandler("/static/**")
+		.addResourceLocations("/public", "/static/")
+		.setCachePeriod(31556926);
+		registry.addResourceHandler("/favicon.ico").addResourceLocations("/favicon.ico");
 	}
 //	
 	//自定义类型转换
