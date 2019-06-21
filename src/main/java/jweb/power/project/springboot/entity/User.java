@@ -2,28 +2,23 @@ package jweb.power.project.springboot.entity;
 
 public class User {
 
+	//主键
 	private Integer userId;
+	//用户名
 	private String userName;
-	
+	//用户账号
 	private String userAccount;
+	//用户密码
 	private String userPassword;
-	
+	//用户身份证
 	private String userIdImg;
-	
+//--------------------------------------------------------------------------
+	//用户权限编号 (假设多个编号间，以逗号隔开)
 	private String sysCodes;
+	//用户权限等级(假设多个等级间，以逗号隔开)
 	private String sysGrades;
 	
-	private String vipcode;
 	
-	private Integer vip;//1 表示 1年表示12个月
-	
-	public String getVipcode() {
-		return vipcode;
-	}
-
-	public void setVipcode(String vipcode) {
-		this.vipcode = vipcode;
-	}
 
 	/**
 	 * 模拟用户登陆的数据 :用户1
@@ -39,21 +34,10 @@ public class User {
 		user.setUserName("我是用户1");
 		user.setUserAccount("account1");
 		user.setUserPassword("123");
-		user.setVipcode("VIP12");
-		user.setVip(12);
 		user.setUserIdImg("/static/_upload/image/u1.gif");
 		return user;
 	}
 	
-	
-	
-	public Integer getVip() {
-		return vip;
-	}
-
-	public void setVip(Integer vip) {
-		this.vip = vip;
-	}
 
 	/**
 	 * 模拟用户登陆的数据 :用户2

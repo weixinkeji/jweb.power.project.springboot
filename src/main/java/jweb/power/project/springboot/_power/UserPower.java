@@ -14,7 +14,7 @@ public class UserPower implements JWPUserInterface {
 	@Override
 	public JWPUserPower getUserPowerCode(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException, ServletException {
-		Object obj=req.getSession().getAttribute("userPowerSession2");
+		Object obj=req.getSession().getAttribute("userPowerSession");
 		if(null==obj) {
 			return null;//未登录
 		}

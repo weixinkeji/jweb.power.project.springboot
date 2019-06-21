@@ -11,7 +11,7 @@
   <groupId>weixinkeji.vip</groupId>
   <artifactId>jweb.power.project.springboot</artifactId>
   <packaging>war</packaging>
-  <version>2.0</version>
+  <version>2.1</version>
   <name>jweb.power.project.springboot Maven Webapp</name>
   <url>https://github.com/qiyueW/jweb.power.project.springboot</url>
   
@@ -21,7 +21,7 @@
 		<dependency>
 			<groupId>weixinkeji.vip</groupId>
 			<artifactId>jweb.power</artifactId>
-			<version>2.0</version>
+			<version>2.1</version>
 		</dependency>
 				
 		<dependency>
