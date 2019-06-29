@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import jweb.power.project.springboot.entity.User;
 import weixinkeji.vip.jweb.power.ann.JWPCommon;
+import weixinkeji.vip.jweb.power.ann.JWPGrades;
 import weixinkeji.vip.jweb.power.vo.JWPUserPower;
 
 /**

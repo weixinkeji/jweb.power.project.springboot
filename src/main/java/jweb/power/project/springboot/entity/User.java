@@ -12,6 +12,13 @@ public class User {
 	private String userPassword;
 	//用户身份证
 	private String userIdImg;
+	
+	//专门存放用户是否购买了vip礼包的
+	private String vipPCode;
+	
+	//记录包年
+	private Integer vipYear;
+	
 //--------------------------------------------------------------------------
 	//用户权限编号 (假设多个编号间，以逗号隔开)
 	private String sysCodes;
@@ -35,6 +42,8 @@ public class User {
 		user.setUserAccount("account1");
 		user.setUserPassword("123");
 		user.setUserIdImg("/static/_upload/image/u1.gif");
+		user.setVipPCode("vipP12");
+		user.setVipYear(12);
 		return user;
 	}
 	
@@ -57,6 +66,23 @@ public class User {
 		return user;
 	}
 	
+	public Integer getVipYear() {
+		return vipYear;
+	}
+
+	public void setVipYear(Integer vipYear) {
+		this.vipYear = vipYear;
+	}
+	public String getVipPCode() {
+		return vipPCode;
+	}
+
+
+	public void setVipPCode(String vipPCode) {
+		this.vipPCode = vipPCode;
+	}
+
+
 	public Integer getUserId() {
 		return userId;
 	}
